@@ -43,7 +43,7 @@ class RepoListViewController: UIViewController, UITableViewDelegate,UITableViewD
             do{
                 let gitUserInfo = try JSONDecoder().decode(gitUser.self, from: data)
                 DispatchQueue.main.async {
-                    self.navigationItem.title = gitUserInfo.name
+                    self.userName.text = gitUserInfo.name
                     let repoUrlString = gitUserInfo.repos_url
                     self.gitRepoDetail(repoUrl: repoUrlString)
                 }
